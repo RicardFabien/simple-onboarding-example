@@ -12,8 +12,14 @@ RUN apt install -y python3.10
 RUN apt install -y pi 
 RUN apt install -y vim 
 RUN apt install -y git 
-RUN apt install -y jupyter
 RUN apt install -y virtualenv
+RUN apt install -y jupyter
+
+RUN mkdir notebook
+RUN cd notebook
+RUN virtualenv jupyterenv
+RUN source jupyterenv/bin/activate
+RUN pip install jupyter
 
 RUN pip install -r requirements.txt
 
